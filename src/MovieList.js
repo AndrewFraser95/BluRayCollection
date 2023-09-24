@@ -25,7 +25,9 @@ const MovieList = () => {
         const uniqueGenres = [
           ...new Set(
             movieData.flatMap((movie) =>
-              movie.Genre?.split(",").map((g) => g.trim().toLowerCase())
+              movie.Genre?.split(",").map(
+                (g) => g.trim().toLowerCase() || "Other"
+              )
             )
           ),
         ];
